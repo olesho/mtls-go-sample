@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  peer1:
+    build: .
+    environment:
+      PEER_ADDR: https://peer2
+    volumes:
+      - ./:/etc/peer
+      - ./peer1-cert.pem:/var/opt/peer/cert.pem
+      - ./peer1-key.pem:/var/opt/peer/key.pem
+  peer2:
+    build: .
+    environment:
+      PEER_ADDR: https://peer1
+    volumes:
+      - ./:/etc/peer
+      - ./peer2-cert.pem:/var/opt/peer/cert.pem
+      - ./peer2-key.pem:/var/opt/peer/key.pem
+  debian:
+    build:
+      dockerfile: DockerfileDebian
+    command: tail -F anything

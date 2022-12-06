@@ -1,0 +1,14 @@
+.DS_Store
+.idea/
+ca-key.pem
+ca.pem
+ca.srl
+main.go
+peer1-cert-csr.pem
+peer1-cert.pem
+peer1-key.pem
+peer2-cert-csr.pem
+peer2-cert.pem
+peer2-key.pem
+tmp
+mtls-go-sample

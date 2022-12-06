@@ -1,0 +1,4 @@
+FROM debian:latest
+COPY ca.pem /usr/local/share/ca-certificates/ca.crt
+RUN apt update && apt install -y curl ca-certificates
+RUN update-ca-certificates
